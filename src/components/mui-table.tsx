@@ -6,9 +6,18 @@ import {
   useMaterialReactTable,
   type MRT_ColumnDef,
 } from "material-react-table";
-import { fetchPersonalStats } from "@/actions";
+import { fetchPersonalStats } from "@/server/actions";
+import { Box, Button, Typography } from "@mui/material";
 
-const CustomTable = ({ members, apiKey }: { members: any; apiKey: string }) => {
+const CustomTable = ({
+  factionName,
+  members,
+  apiKey,
+}: {
+  factionName: string;
+  members: any;
+  apiKey: string;
+}) => {
   const [data, setData] = useState<any>([]);
 
   useEffect(() => {
@@ -57,37 +66,42 @@ const CustomTable = ({ members, apiKey }: { members: any; apiKey: string }) => {
       {
         accessorKey: "level",
         header: "Level",
-        size: 150,
-      },
-      {
-        accessorKey: "status", //normal accessorKey
-        header: "Status",
-        size: 200,
+        size: 20,
       },
       {
         accessorKey: "xanaxTaken",
-        header: "Xanax Taken",
-        size: 150,
+        header: "XT",
+        size: 20,
+      },
+      {
+        accessorKey: "totalAttacks",
+        header: "TA",
+        size: 20,
       },
       {
         accessorKey: "warHit",
-        header: "War Hit",
-        size: 150,
+        header: "WH",
+        size: 20,
       },
       {
         accessorKey: "cansUsed",
-        header: "Cans Used",
-        size: 150,
+        header: "CU",
+        size: 20,
       },
       {
         accessorKey: "revivesDone",
-        header: "Revives given",
-        size: 150,
+        header: "RG",
+        size: 20,
       },
       {
         accessorKey: "networth",
         header: "Networth",
         size: 150,
+      },
+      {
+        accessorKey: "status", //normal accessorKey
+        header: "Status",
+        size: 260,
       },
     ],
     []
@@ -96,6 +110,33 @@ const CustomTable = ({ members, apiKey }: { members: any; apiKey: string }) => {
   const table = useMaterialReactTable({
     columns,
     data, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
+    enableDensityToggle: false,
+    enablePagination: false,
+    initialState: {
+      density: "compact",
+      pagination: {
+        pageIndex: 0,
+        pageSize: 100,
+      },
+    },
+    muiTableBodyProps: {
+      sx: {
+        minHeight: "calc(100vh - 165.59px)",
+        height: "calc(100vh - 165.59px)",
+        maxHeight: "calc(100vh - 165.59px)",
+        flexGrow: "1",
+      },
+    },
+    renderTopToolbarCustomActions: ({ table }) => (
+      <Typography
+        variant={"h5"}
+        sx={{
+          fontWeight: "bold",
+        }}
+      >
+        {factionName}
+      </Typography>
+    ),
   });
 
   return <MaterialReactTable table={table} />;
