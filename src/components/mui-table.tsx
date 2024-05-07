@@ -35,7 +35,7 @@ const CustomTable = ({
 
       const totalAttacks =
         data.attackswon +
-        data.attacksLost +
+        data.attackslost +
         data.attacksdraw +
         data.attacksassisted;
 
@@ -51,7 +51,6 @@ const CustomTable = ({
         cansUsed: data.energydrinkused,
       });
     }
-
     setData(dataList);
   };
 
@@ -97,6 +96,13 @@ const CustomTable = ({
         accessorKey: "networth",
         header: "Networth",
         size: 150,
+        Cell: ({ cell }) => {
+          return (
+            <span>
+              {formatToThousandSeparator({ number: cell.getValue<number>() })}
+            </span>
+          );
+        },
       },
       {
         accessorKey: "status", //normal accessorKey
@@ -112,22 +118,37 @@ const CustomTable = ({
     data, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
     enableDensityToggle: false,
     enablePagination: false,
+    enableStickyHeader: true,
+    enableColumnPinning: true,
     initialState: {
       density: "compact",
       pagination: {
         pageIndex: 0,
         pageSize: 100,
       },
-    },
-    muiTableBodyProps: {
-      sx: {
-        minHeight: "calc(100vh - 165.59px)",
-        height: "calc(100vh - 165.59px)",
-        maxHeight: "calc(100vh - 165.59px)",
-        flexGrow: "1",
+      sorting: [
+        {
+          id: "created_at",
+          desc: true,
+        },
+      ],
+      columnPinning: {
+        left: ["name", "level"],
       },
     },
-    renderTopToolbarCustomActions: ({ table }) => (
+    muiTablePaperProps: {
+      sx: {
+        boxShadow: "none",
+      },
+    },
+    muiTableContainerProps: {
+      sx: {
+        minHeight: "calc(100vh - 112px)",
+        height: "calc(100vh - 112px)",
+        maxHeight: "calc(100vh - 112px)",
+      },
+    },
+    renderTopToolbarCustomActions: () => (
       <Typography
         variant={"h5"}
         sx={{
@@ -143,3 +164,22 @@ const CustomTable = ({
 };
 
 export default CustomTable;
+
+function formatToThousandSeparator({ number }: { number: number }) {
+  let numberString = number.toString();
+
+  let chars = numberString.split("");
+
+  let commaCount = 0;
+  let formattedString = "";
+
+  for (let i = chars.length - 1; i >= 0; i--) {
+    formattedString = chars[i] + formattedString;
+    commaCount++;
+    if (commaCount % 3 === 0 && i !== 0) {
+      formattedString = "," + formattedString;
+    }
+  }
+
+  return formattedString;
+}
