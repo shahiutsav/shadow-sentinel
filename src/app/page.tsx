@@ -20,6 +20,8 @@ export default function Home() {
   const [apiKey, setApiKey] = useState("");
   const [faction, setFaction] = useState<any>();
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const members: Member[] = useMemo(() => [], []);
 
   const [data, setData] = useState<any>([]);
@@ -118,23 +120,35 @@ export default function Home() {
             onChange={handleFactionIDChange}
           />
           <button
-            className="bg-slate-950 text-white p-2 rounded-md"
+            className="bg-slate-950 text-white p-2 rounded-md disabled:bg-slate-500 disabled:line-through disabled:cursor-not-allowed flex items-center justify-center h-10"
+            disabled={isLoading}
             onClick={async () => {
+              setIsLoading(true);
               fetchFactionDetail().then((faction) => {
                 setMembersList({ faction: faction });
-                getPersonalStats();
-                getEnemyStatsFromSpies({
-                  warID: Object.keys(faction.ranked_wars)[0],
+                getPersonalStats().then(() => {
+                  setIsLoading(false);
                 });
+                // getEnemyStatsFromSpies({
+                //   warID: Object.keys(faction.ranked_wars)[0],
+                // });
               });
             }}
           >
-            Search Faction
+            {isLoading ? (
+              <span className="h-5 w-5 animate-spin rounded-full border-b-4 border-t-4 border-white"></span>
+            ) : (
+              "Search Faction"
+            )}
           </button>
         </div>
       </div>
       <div className="w-[calc(100%-288px)] ml-auto mr-0">
-        <CustomTable factionName={faction && faction.name} data={data} />
+        <CustomTable
+          factionName={faction && faction.name}
+          data={data}
+          isLoading={isLoading}
+        />
       </div>
     </main>
   );

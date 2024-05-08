@@ -1,19 +1,20 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   MaterialReactTable,
   useMaterialReactTable,
   type MRT_ColumnDef,
 } from "material-react-table";
-import { fetchEnemyStats, fetchPersonalStats } from "@/server/actions";
 import { Typography } from "@mui/material";
 
 const CustomTable = ({
   factionName,
+  isLoading,
   data,
 }: {
   factionName: string;
+  isLoading: boolean;
   data: any;
 }) => {
   //should be memoized or stable
@@ -78,6 +79,13 @@ const CustomTable = ({
   const table = useMaterialReactTable({
     columns,
     data, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
+    state: {
+      isLoading: isLoading,
+    },
+    muiSkeletonProps: {
+      animation: "wave",
+    },
+
     enableDensityToggle: false,
     enablePagination: false,
     enableStickyHeader: true,
