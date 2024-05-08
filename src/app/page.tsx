@@ -13,11 +13,18 @@ interface Member {
   name: string;
   status: string;
   level: number;
+  strength?: string; // Add the new attributes here
+  speed?: string;
+  defense?: string;
+  dexterity?: string;
+  total?: string;
+  timestamp?: string;
 }
 
 export default function Home() {
   const [factionID, setFactionID] = useState("");
-  const [apiKey, setApiKey] = useState("");
+  const [tornApiKey, setTornApiKey] = useState("");
+  const [tornstatsApiKey, setTornstatsApiKey] = useState("");
   const [faction, setFaction] = useState<any>();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -28,7 +35,7 @@ export default function Home() {
 
   const fetchFactionDetail = async () => {
     let faction = await fetchFactionDetails({
-      apiKey: apiKey,
+      apiKey: tornApiKey,
       factionID: factionID,
     });
 
@@ -56,7 +63,7 @@ export default function Home() {
       const member = members[memberIndex];
       const data = await fetchPersonalStats({
         id: member.id,
-        apiKey: apiKey,
+        apiKey: tornApiKey,
       });
 
       const totalAttacks =
@@ -66,6 +73,7 @@ export default function Home() {
         data.attacksassisted;
 
       dataList.push({
+        id: member.id,
         name: member.name,
         status: member.status,
         level: member.level,
@@ -78,40 +86,93 @@ export default function Home() {
       });
     }
     setData(dataList);
+    return dataList;
   };
 
-  const getEnemyStatsFromSpies = async ({ warID }: { warID: string }) => {
+  const getEnemyStatsFromSpies = async ({
+    warID,
+    originalData,
+  }: {
+    warID: string;
+    originalData: Member[];
+  }) => {
     const data = await fetchEnemyStats({
-      apiKey: process.env.TORNSTATS_API_KEY,
+      apiKey: tornstatsApiKey,
       warID: warID,
     });
-    console.log(data, "war id");
+
+    const keys = Object.keys(data);
+    if (data[keys[0]].hasOwnProperty("spy")) {
+      console.log("Yup spy property found");
+      for (const id in data) {
+        const matchingObjectIndex = originalData.findIndex(
+          (obj) => obj.id === id
+        );
+        if (matchingObjectIndex !== -1) {
+          // Add new properties to the matching object within the originalData array
+          originalData[matchingObjectIndex].strength = data[id].spy.strength;
+          originalData[matchingObjectIndex].speed = data[id].spy.speed;
+          originalData[matchingObjectIndex].defense = data[id].spy.defense;
+          originalData[matchingObjectIndex].dexterity = data[id].spy.dexterity;
+          originalData[matchingObjectIndex].total = data[id].spy.total;
+          originalData[matchingObjectIndex].timestamp = data[id].spy.timestamp;
+        }
+      }
+
+      setData(originalData);
+    } else {
+      for (const id in data) {
+        const matchingObjectIndex = originalData.findIndex(
+          (obj) => obj.id === id
+        );
+        if (matchingObjectIndex !== -1) {
+          // Add new properties to the matching object within the originalData array
+          originalData[matchingObjectIndex].strength = "NA";
+          originalData[matchingObjectIndex].speed = "NA";
+          originalData[matchingObjectIndex].defense = "NA";
+          originalData[matchingObjectIndex].dexterity = "NA";
+          originalData[matchingObjectIndex].total = "NA";
+          originalData[matchingObjectIndex].timestamp = "NA";
+        }
+      }
+    }
   };
 
   const handleFactionIDChange = (event: React.FormEvent<HTMLInputElement>) => {
     setFactionID(event.currentTarget.value);
   };
 
-  const handleAPIKeyChange = (event: React.FormEvent<HTMLInputElement>) => {
-    setApiKey(event.currentTarget.value);
-  };
-
   return (
     <main className="h-dvh">
       <div className="max-w-72 h-full fixed shadow px-6 py-8 rounded-md flex flex-col gap-8">
         <div className="flex flex-col gap-3">
-          <label htmlFor="api_key_1">API Key</label>
+          <label htmlFor="torn_api_key">Torn API Key</label>
           <input
-            name="api_key_1"
+            name="torn_api_key"
             type="text"
             className="border p-2 rounded-md border-slate-400"
             placeholder="API Key here"
-            value={apiKey}
-            onChange={handleAPIKeyChange}
+            value={tornApiKey}
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              setTornApiKey(e.currentTarget.value)
+            }
           />
         </div>
         <div className="flex flex-col gap-3">
-          <label htmlFor="faction_id">Faction ID</label>
+          <label htmlFor="tornstats_api_key">Tornstats API Key</label>
+          <input
+            name="tornstats_api_key"
+            type="text"
+            className="border p-2 rounded-md border-slate-400"
+            placeholder="API Key here"
+            value={tornstatsApiKey}
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              setTornstatsApiKey(e.currentTarget.value)
+            }
+          />
+        </div>
+        <div className="flex flex-col gap-3">
+          <label htmlFor="faction_id">War Enemy Faction ID</label>
           <input
             type="text"
             className="border p-2 rounded-md border-slate-400"
@@ -126,12 +187,14 @@ export default function Home() {
               setIsLoading(true);
               fetchFactionDetail().then((faction) => {
                 setMembersList({ faction: faction });
-                getPersonalStats().then(() => {
-                  setIsLoading(false);
+                getPersonalStats().then((originalData) => {
+                  getEnemyStatsFromSpies({
+                    warID: Object.keys(faction.ranked_wars)[0],
+                    originalData: originalData,
+                  }).then(() => {
+                    setIsLoading(false);
+                  });
                 });
-                // getEnemyStatsFromSpies({
-                //   warID: Object.keys(faction.ranked_wars)[0],
-                // });
               });
             }}
           >

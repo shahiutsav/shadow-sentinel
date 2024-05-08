@@ -31,6 +31,47 @@ const CustomTable = ({
         size: 150,
       },
       {
+        accessorKey: "strength",
+        header: "STR",
+        size: 20,
+      },
+      {
+        accessorKey: "speed",
+        header: "SPD",
+        size: 20,
+      },
+      {
+        accessorKey: "defense",
+        header: "DF",
+        size: 20,
+      },
+      {
+        accessorKey: "dexterity",
+        header: "DXT",
+        size: 20,
+      },
+      {
+        accessorKey: "total",
+        header: "Total",
+        size: 20,
+      },
+      {
+        accessorKey: "timestamp",
+        header: "Time",
+        size: 20,
+        Cell: ({ cell }) => {
+          return (
+            <span>
+              {cell.getValue<string>() === "NA"
+                ? "NA"
+                : timestampToHumanReadable(
+                    Number.parseInt(cell.getValue<string>())
+                  )}
+            </span>
+          );
+        },
+      },
+      {
         accessorKey: "xanaxTaken",
         header: "XT",
         size: 20,
@@ -85,7 +126,12 @@ const CustomTable = ({
     muiSkeletonProps: {
       animation: "wave",
     },
-
+    enableBottomToolbar: false,
+    muiTableFooterProps: {
+      sx: {
+        display: "none",
+      },
+    },
     enableDensityToggle: false,
     enablePagination: false,
     enableStickyHeader: true,
@@ -113,9 +159,9 @@ const CustomTable = ({
     },
     muiTableContainerProps: {
       sx: {
-        minHeight: "calc(100vh - 112px)",
-        height: "calc(100vh - 112px)",
-        maxHeight: "calc(100vh - 112px)",
+        minHeight: "calc(100vh - 56px)",
+        height: "calc(100vh - 56px)",
+        maxHeight: "calc(100vh - 56px)",
       },
     },
     renderTopToolbarCustomActions: () => (
@@ -153,3 +199,23 @@ function formatToThousandSeparator({ number }: { number: number }) {
 
   return formattedString;
 }
+
+const timestampToHumanReadable = (timestamp: number) => {
+  // Convert Unix timestamp to milliseconds
+  const date = new Date(timestamp * 1000);
+
+  // Get month abbreviation and zero-padded day
+  const month = date.toLocaleString("default", { month: "short" });
+  const day = ("0" + date.getDate()).slice(-2);
+
+  // Get formatted time (12-hour format with am/pm)
+  let hours = date.getHours();
+  const ampm = hours >= 12 ? "pm" : "am";
+  hours = hours % 12 || 12; // Convert 0 to 12
+  const minutes = ("0" + date.getMinutes()).slice(-2);
+
+  // Construct the human-readable date and time string
+  const humanReadableDateTime = `${month} ${day}, ${date.getFullYear()} at ${hours}:${minutes} ${ampm}`;
+
+  return humanReadableDateTime;
+};
