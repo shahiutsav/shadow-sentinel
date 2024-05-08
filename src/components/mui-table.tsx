@@ -6,66 +6,28 @@ import {
   useMaterialReactTable,
   type MRT_ColumnDef,
 } from "material-react-table";
-import { fetchPersonalStats } from "@/server/actions";
-import { Box, Button, Typography } from "@mui/material";
+import { fetchEnemyStats, fetchPersonalStats } from "@/server/actions";
+import { Typography } from "@mui/material";
 
 const CustomTable = ({
   factionName,
-  members,
-  apiKey,
+  data,
 }: {
   factionName: string;
-  members: any;
-  apiKey: string;
+  data: any;
 }) => {
-  const [data, setData] = useState<any>([]);
-
-  useEffect(() => {
-    getPersonalStats();
-  }, [members]);
-
-  const getPersonalStats = async () => {
-    let dataList = [];
-    for (let memberIndex in members) {
-      const member = members[memberIndex];
-      const data = await fetchPersonalStats({
-        id: member.id,
-        apiKey: apiKey,
-      });
-
-      const totalAttacks =
-        data.attackswon +
-        data.attackslost +
-        data.attacksdraw +
-        data.attacksassisted;
-
-      dataList.push({
-        name: member.name,
-        status: member.status,
-        level: member.level,
-        totalAttacks: totalAttacks,
-        networth: data.networth,
-        xanaxTaken: data.xantaken,
-        warHit: data.rankedwarhits,
-        revivesDone: data.revives,
-        cansUsed: data.energydrinkused,
-      });
-    }
-    setData(dataList);
-  };
-
   //should be memoized or stable
   const columns = useMemo<MRT_ColumnDef<any>[]>(
     () => [
       {
+        accessorKey: "level",
+        header: "LVL",
+        size: 20,
+      },
+      {
         accessorKey: "name", //access nested data with dot notation
         header: "Name",
         size: 150,
-      },
-      {
-        accessorKey: "level",
-        header: "Level",
-        size: 20,
       },
       {
         accessorKey: "xanaxTaken",
@@ -128,12 +90,12 @@ const CustomTable = ({
       },
       sorting: [
         {
-          id: "created_at",
+          id: "level",
           desc: true,
         },
       ],
       columnPinning: {
-        left: ["name", "level"],
+        left: ["level", "name"],
       },
     },
     muiTablePaperProps: {

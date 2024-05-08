@@ -1,0 +1,1562 @@
+{
+  "649966": {
+    "name": "PhillysFinest",
+    "level": 73,
+    "days_in_faction": 532,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715093837,
+      "relative": "46 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 649966,
+    "spy": {
+      "strength": 30250448,
+      "defense": 31358975,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 143696942,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715033033
+    }
+  },
+  "1284000": {
+    "name": "Trideus",
+    "level": 80,
+    "days_in_faction": 1476,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715089070,
+      "relative": "2 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 1284000,
+    "spy": {
+      "strength": 127979567,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 698665,
+      "total": 1800000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714989186
+    }
+  },
+  "1587906": {
+    "name": "CaptGalaxy",
+    "level": 59,
+    "days_in_faction": 1374,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715093183,
+      "relative": "57 minutes ago"
+    },
+    "status": {
+      "description": "Returning to Torn from United Kingdom",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 1587906,
+    "spy": {
+      "strength": 0,
+      "defense": 1001470868,
+      "speed": 1001929207,
+      "dexterity": 0,
+      "total": 2325592182,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714478871
+    }
+  },
+  "1882817": {
+    "name": "pauljnelson",
+    "level": 50,
+    "days_in_faction": 1393,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715062252,
+      "relative": "9 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 1882817,
+    "spy": {
+      "strength": 311170579,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 320272737,
+      "total": 1300000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715025041
+    }
+  },
+  "1930872": {
+    "name": "CodeNameGarbo",
+    "level": 77,
+    "days_in_faction": 1373,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715093223,
+      "relative": "56 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 1930872,
+    "spy": {
+      "strength": 1000501450,
+      "defense": 17262702,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 1826106159,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715014404
+    }
+  },
+  "1977480": {
+    "name": "Leon_Cyrus",
+    "level": 35,
+    "days_in_faction": 10,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715087939,
+      "relative": "2 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Member",
+    "id": 1977480,
+    "spy": {
+      "strength": 21777,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 47371,
+      "total": 868844,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715049651
+    }
+  },
+  "2075125": {
+    "name": "Skinny_Puppy",
+    "level": 83,
+    "days_in_faction": 840,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715068303,
+      "relative": "7 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2075125,
+    "spy": {
+      "strength": 990712078,
+      "defense": 362152122,
+      "speed": 671879065,
+      "dexterity": 675256735,
+      "total": 2700000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714889390
+    }
+  },
+  "2078805": {
+    "name": "IceSkullFire",
+    "level": 21,
+    "days_in_faction": 974,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715095353,
+      "relative": "20 minutes ago"
+    },
+    "status": {
+      "description": "Traveling to South Africa",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2078805,
+    "spy": {
+      "strength": 122712257,
+      "defense": 300177633,
+      "speed": 122803044,
+      "dexterity": 134307066,
+      "total": 680000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714691894
+    }
+  },
+  "2081636": {
+    "name": "hedgehogger",
+    "level": 91,
+    "days_in_faction": 1367,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715091792,
+      "relative": "1 hour ago"
+    },
+    "status": {
+      "description": "Returning to Torn from Hawaii",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2081636,
+    "spy": {
+      "strength": 628854398,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 113262407,
+      "total": 1151869833,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714715485
+    }
+  },
+  "2094694": {
+    "name": "Tezzle",
+    "level": 100,
+    "days_in_faction": 1490,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715094922,
+      "relative": "28 minutes ago"
+    },
+    "status": {
+      "description": "Returning to Torn from UAE",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Leader",
+    "id": 2094694,
+    "spy": {
+      "strength": 0,
+      "defense": 1206094049,
+      "speed": 0,
+      "dexterity": 1055625316,
+      "total": 3369055368,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714898490
+    }
+  },
+  "2108583": {
+    "name": "Xoke",
+    "level": 75,
+    "days_in_faction": 1164,
+    "last_action": {
+      "status": "Idle",
+      "timestamp": 1715096159,
+      "relative": "7 minutes ago"
+    },
+    "status": {
+      "description": "Traveling to United Kingdom",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Co-lead",
+    "id": 2108583,
+    "spy": {
+      "strength": 162501153,
+      "defense": 0,
+      "speed": 270378034,
+      "dexterity": 0,
+      "total": 1200287461,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714943018
+    }
+  },
+  "2137326": {
+    "name": "Natrose88",
+    "level": 66,
+    "days_in_faction": 1257,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715073291,
+      "relative": "6 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2137326,
+    "spy": {
+      "strength": 6786503,
+      "defense": 6780127,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 27131974,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714824854
+    }
+  },
+  "2146902": {
+    "name": "LegoLee",
+    "level": 32,
+    "days_in_faction": 832,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715040173,
+      "relative": "15 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2146902,
+    "spy": {
+      "strength": 377253,
+      "defense": 374456,
+      "speed": 377231,
+      "dexterity": 371060,
+      "total": 1500000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714748424
+    }
+  },
+  "2218646": {
+    "name": "Hasbeans",
+    "level": 26,
+    "days_in_faction": 1170,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715090051,
+      "relative": "1 hour ago"
+    },
+    "status": {
+      "description": "Traveling to United Kingdom",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2218646,
+    "spy": {
+      "strength": 2452197,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 1960623,
+      "total": 11000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714930303
+    }
+  },
+  "2225657": {
+    "name": "KShinobi",
+    "level": 50,
+    "days_in_faction": 1289,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715064674,
+      "relative": "8 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2225657,
+    "spy": {
+      "strength": 210114451,
+      "defense": 234270915,
+      "speed": 120774953,
+      "dexterity": 29152,
+      "total": 565189471,
+      "timestamp": 1714729446
+    },
+    "personalstats": {
+      "timestamp": 1714931485
+    }
+  },
+  "2225849": {
+    "name": "Derping",
+    "level": 50,
+    "days_in_faction": 249,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715054921,
+      "relative": "11 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2225849,
+    "spy": {
+      "strength": 3608786,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 3582848,
+      "total": 18456692,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715022880
+    }
+  },
+  "2227669": {
+    "name": "Alexaz",
+    "level": 42,
+    "days_in_faction": 1382,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715087691,
+      "relative": "2 hours ago"
+    },
+    "status": {
+      "description": "In United Kingdom",
+      "details": "",
+      "state": "Abroad",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2227669,
+    "spy": {
+      "strength": 67715573,
+      "defense": 84883448,
+      "speed": 63853958,
+      "dexterity": 23547021,
+      "total": 240000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714930306
+    }
+  },
+  "2268033": {
+    "name": "peeta22",
+    "level": 44,
+    "days_in_faction": 424,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715080769,
+      "relative": "4 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2268033,
+    "spy": {
+      "strength": 197616,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 197570,
+      "total": 790301,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714623596
+    }
+  },
+  "2272827": {
+    "name": "Dealla",
+    "level": 51,
+    "days_in_faction": 1400,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715085112,
+      "relative": "3 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2272827,
+    "spy": {
+      "strength": 0,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 5500000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714720362
+    }
+  },
+  "2319944": {
+    "name": "Alice_Angel",
+    "level": 43,
+    "days_in_faction": 1283,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715053500,
+      "relative": "11 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Member",
+    "id": 2319944,
+    "spy": {
+      "strength": 1015743,
+      "defense": 2107237,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 5730641,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715025064
+    }
+  },
+  "2343526": {
+    "name": "51Fifty",
+    "level": 40,
+    "days_in_faction": 135,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715063014,
+      "relative": "9 hours ago"
+    },
+    "status": {
+      "description": "In UAE",
+      "details": "",
+      "state": "Abroad",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2343526,
+    "spy": {
+      "strength": 2334154,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 1319960,
+      "total": 14197755,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714626709
+    }
+  },
+  "2402240": {
+    "name": "Spade_Knight",
+    "level": 40,
+    "days_in_faction": 1326,
+    "last_action": {
+      "status": "Idle",
+      "timestamp": 1715091181,
+      "relative": "1 hour ago"
+    },
+    "status": {
+      "description": "Traveling to UAE",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2402240,
+    "spy": {
+      "strength": 3117621,
+      "defense": 0,
+      "speed": 123674,
+      "dexterity": 0,
+      "total": 7853600,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714691642
+    }
+  },
+  "2407079": {
+    "name": "Mehazabien",
+    "level": 58,
+    "days_in_faction": 1471,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715089200,
+      "relative": "2 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2407079,
+    "spy": {
+      "strength": 2203356,
+      "defense": 11373331,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 162123470,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714917360
+    }
+  },
+  "2413824": {
+    "name": "Zorgo",
+    "level": 60,
+    "days_in_faction": 1321,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715088602,
+      "relative": "2 hours ago"
+    },
+    "status": {
+      "description": "In Argentina",
+      "details": "",
+      "state": "Abroad",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Crypton",
+    "id": 2413824,
+    "spy": {
+      "strength": 18088288,
+      "defense": 17863173,
+      "speed": 18122962,
+      "dexterity": 11925577,
+      "total": 66000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714478819
+    }
+  },
+  "2428421": {
+    "name": "Tetsuya007",
+    "level": 18,
+    "days_in_faction": 375,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715085547,
+      "relative": "3 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2428421,
+    "spy": {
+      "strength": 13517,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 38912,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714776307
+    }
+  },
+  "2428612": {
+    "name": "Z1RK3",
+    "level": 30,
+    "days_in_faction": 488,
+    "last_action": {
+      "status": "Online",
+      "timestamp": 1715096587,
+      "relative": "0 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2428612,
+    "spy": {
+      "strength": 50104429,
+      "defense": 0,
+      "speed": 43393945,
+      "dexterity": 0,
+      "total": 96002831,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714930309
+    }
+  },
+  "2511806": {
+    "name": "Neon_Panda",
+    "level": 43,
+    "days_in_faction": 487,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715079939,
+      "relative": "4 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2511806,
+    "spy": {
+      "strength": 1000798,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 1501925,
+      "total": 4108422,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714776382
+    }
+  },
+  "2531705": {
+    "name": "Andy_P",
+    "level": 89,
+    "days_in_faction": 1436,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715095770,
+      "relative": "13 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Co-leader",
+    "id": 2531705,
+    "spy": {
+      "strength": 635989063,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 1005702,
+      "total": 2147446458,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715087882
+    }
+  },
+  "2532309": {
+    "name": "Joeysov",
+    "level": 60,
+    "days_in_faction": 1476,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715091558,
+      "relative": "1 hour ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2532309,
+    "spy": {
+      "strength": 0,
+      "defense": 0,
+      "speed": 11038371,
+      "dexterity": 1054643,
+      "total": 45000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714810826
+    }
+  },
+  "2548165": {
+    "name": "marko75",
+    "level": 82,
+    "days_in_faction": 1360,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715093019,
+      "relative": "59 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2548165,
+    "spy": {
+      "strength": 0,
+      "defense": 2009575,
+      "speed": 0,
+      "dexterity": 5835138,
+      "total": 441506138,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715030516
+    }
+  },
+  "2548328": {
+    "name": "Ub3rskurk",
+    "level": 47,
+    "days_in_faction": 444,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715092486,
+      "relative": "1 hour ago"
+    },
+    "status": {
+      "description": "In United Kingdom",
+      "details": "",
+      "state": "Abroad",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2548328,
+    "spy": {
+      "strength": 0,
+      "defense": 0,
+      "speed": 51693353,
+      "dexterity": 703052,
+      "total": 130000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714846410
+    }
+  },
+  "2557435": {
+    "name": "ReeFlair",
+    "level": 38,
+    "days_in_faction": 455,
+    "last_action": {
+      "status": "Online",
+      "timestamp": 1715096552,
+      "relative": "0 minutes ago"
+    },
+    "status": {
+      "description": "Traveling to South Africa",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2557435,
+    "spy": {
+      "strength": 566018,
+      "defense": 562761,
+      "speed": 562743,
+      "dexterity": 508478,
+      "total": 2200000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715021601
+    }
+  },
+  "2562767": {
+    "name": "Azii",
+    "level": 17,
+    "days_in_faction": 899,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1714383295,
+      "relative": "8 days ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2562767,
+    "spy": {
+      "strength": 370892,
+      "defense": 0,
+      "speed": 370313,
+      "dexterity": 0,
+      "total": 1482115,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714943573
+    }
+  },
+  "2569884": {
+    "name": "DartBoard9",
+    "level": 72,
+    "days_in_faction": 1357,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715095929,
+      "relative": "11 minutes ago"
+    },
+    "status": {
+      "description": "Traveling to Switzerland",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2569884,
+    "spy": {
+      "strength": 0,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 108505200,
+      "total": 688604556,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714715497
+    }
+  },
+  "2572654": {
+    "name": "Slayer21",
+    "level": 58,
+    "days_in_faction": 1369,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715090163,
+      "relative": "1 hour ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2572654,
+    "spy": {
+      "strength": 1410439,
+      "defense": 833633,
+      "speed": 610501,
+      "dexterity": 10145427,
+      "total": 13000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714478825
+    }
+  },
+  "2574344": {
+    "name": "Knight_666",
+    "level": 28,
+    "days_in_faction": 555,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1714904779,
+      "relative": "2 days ago"
+    },
+    "status": {
+      "description": "In South Africa",
+      "details": "",
+      "state": "Abroad",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Member",
+    "id": 2574344,
+    "spy": {
+      "strength": 0,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 2300000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714748424
+    }
+  },
+  "2599954": {
+    "name": "beardly",
+    "level": 62,
+    "days_in_faction": 1328,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715095223,
+      "relative": "23 minutes ago"
+    },
+    "status": {
+      "description": "In Mexico",
+      "details": "",
+      "state": "Abroad",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2599954,
+    "spy": {
+      "strength": 25040690,
+      "defense": 174729295,
+      "speed": 24968974,
+      "dexterity": 25261041,
+      "total": 250000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715021590
+    }
+  },
+  "2643581": {
+    "name": "kyemmy",
+    "level": 33,
+    "days_in_faction": 603,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1714274139,
+      "relative": "9 days ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2643581,
+    "spy": {
+      "strength": 0,
+      "defense": 72145,
+      "speed": 0,
+      "dexterity": 41005,
+      "total": 290006,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714943586
+    }
+  },
+  "2647689": {
+    "name": "dr_D_rock",
+    "level": 65,
+    "days_in_faction": 752,
+    "last_action": {
+      "status": "Idle",
+      "timestamp": 1715093505,
+      "relative": "51 minutes ago"
+    },
+    "status": {
+      "description": "Traveling to South Africa",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2647689,
+    "spy": {
+      "strength": 200207198,
+      "defense": 0,
+      "speed": 2218129,
+      "dexterity": 0,
+      "total": 280000000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715038528
+    }
+  },
+  "2674770": {
+    "name": "-dominick-",
+    "level": 30,
+    "days_in_faction": 970,
+    "last_action": {
+      "status": "Online",
+      "timestamp": 1715096593,
+      "relative": "0 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2674770,
+    "spy": {
+      "strength": 245311,
+      "defense": 0,
+      "speed": 19094,
+      "dexterity": 0,
+      "total": 313697,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714884479
+    }
+  },
+  "2676573": {
+    "name": "Bhollan1973",
+    "level": 40,
+    "days_in_faction": 969,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715047318,
+      "relative": "13 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2676573,
+    "spy": {
+      "strength": 421687,
+      "defense": 617292,
+      "speed": 214162,
+      "dexterity": 146859,
+      "total": 1400000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715046135
+    }
+  },
+  "2766364": {
+    "name": "Pengypoo",
+    "level": 31,
+    "days_in_faction": 121,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715095094,
+      "relative": "25 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2766364,
+    "spy": {
+      "strength": 0,
+      "defense": 68880,
+      "speed": 26626,
+      "dexterity": 0,
+      "total": 155000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714844703
+    }
+  },
+  "2768239": {
+    "name": "RealJolimoli",
+    "level": 30,
+    "days_in_faction": 599,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715062778,
+      "relative": "9 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2768239,
+    "spy": {
+      "strength": 0,
+      "defense": 1015683,
+      "speed": 1016187,
+      "dexterity": 0,
+      "total": 4585772,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715048100
+    }
+  },
+  "2776035": {
+    "name": "CozyHypnotist",
+    "level": 27,
+    "days_in_faction": 590,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715032871,
+      "relative": "17 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2776035,
+    "spy": {
+      "strength": 0,
+      "defense": 32447,
+      "speed": 0,
+      "dexterity": 32329,
+      "total": 144805,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714744707
+    }
+  },
+  "2812285": {
+    "name": "Goddess4sin",
+    "level": 27,
+    "days_in_faction": 592,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715082039,
+      "relative": "4 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Member",
+    "id": 2812285,
+    "spy": {
+      "strength": 82209,
+      "defense": 91357,
+      "speed": 83636,
+      "dexterity": 92798,
+      "total": 350000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714691808
+    }
+  },
+  "2815912": {
+    "name": "Resatos",
+    "level": 40,
+    "days_in_faction": 600,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715094582,
+      "relative": "33 minutes ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2815912,
+    "spy": {
+      "strength": 0,
+      "defense": 174398,
+      "speed": 0,
+      "dexterity": 173965,
+      "total": 800000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714845394
+    }
+  },
+  "2821026": {
+    "name": "Lany",
+    "level": 30,
+    "days_in_faction": 603,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715096237,
+      "relative": "6 minutes ago"
+    },
+    "status": {
+      "description": "In Canada",
+      "details": "",
+      "state": "Abroad",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2821026,
+    "spy": {
+      "strength": 0,
+      "defense": 2744837,
+      "speed": 277591,
+      "dexterity": 0,
+      "total": 4358456,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715022746
+    }
+  },
+  "2830590": {
+    "name": "Vickylove",
+    "level": 12,
+    "days_in_faction": 30,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715020742,
+      "relative": "21 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2830590,
+    "spy": {
+      "strength": 3178,
+      "defense": 47,
+      "speed": 0,
+      "dexterity": 0,
+      "total": 5321,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714943573
+    }
+  },
+  "2846549": {
+    "name": "Donquavious",
+    "level": 20,
+    "days_in_faction": 240,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715048123,
+      "relative": "13 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Member",
+    "id": 2846549,
+    "spy": {
+      "strength": 0,
+      "defense": 0,
+      "speed": 5550,
+      "dexterity": 5556,
+      "total": 39115,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1715009312
+    }
+  },
+  "2867914": {
+    "name": "JaIme_Moriarty",
+    "level": 39,
+    "days_in_faction": 120,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715088978,
+      "relative": "2 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2867914,
+    "spy": {
+      "strength": 0,
+      "defense": 0,
+      "speed": 145756,
+      "dexterity": 145744,
+      "total": 1600000,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714896799
+    }
+  },
+  "2968083": {
+    "name": "Jegess",
+    "level": 27,
+    "days_in_faction": 319,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715090298,
+      "relative": "1 hour ago"
+    },
+    "status": {
+      "description": "Returning to Torn from Argentina",
+      "details": "",
+      "state": "Traveling",
+      "color": "blue",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 2968083,
+    "spy": {
+      "strength": 128450,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 111235,
+      "total": 462848,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714820076
+    }
+  },
+  "3032037": {
+    "name": "Th3beholder",
+    "level": 23,
+    "days_in_faction": 159,
+    "last_action": {
+      "status": "Offline",
+      "timestamp": 1715085087,
+      "relative": "3 hours ago"
+    },
+    "status": {
+      "description": "Okay",
+      "details": "",
+      "state": "Okay",
+      "color": "green",
+      "until": 0
+    },
+    "position": "Impulsive",
+    "id": 3032037,
+    "spy": {
+      "strength": 3849,
+      "defense": 0,
+      "speed": 0,
+      "dexterity": 3838,
+      "total": 15399,
+      "timestamp": 1714696044
+    },
+    "personalstats": {
+      "timestamp": 1714943570
+    }
+  }
+}

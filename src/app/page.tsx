@@ -1,8 +1,12 @@
 "use client";
 
-import { fetchFactionDetails } from "@/server/actions";
+import {
+  fetchEnemyStats,
+  fetchFactionDetails,
+  fetchPersonalStats,
+} from "@/server/actions";
 import CustomTable from "@/components/mui-table";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 interface Member {
   id: string;
@@ -16,7 +20,9 @@ export default function Home() {
   const [apiKey, setApiKey] = useState("");
   const [faction, setFaction] = useState<any>();
 
-  const [members, setMembers] = useState<Member[]>([]);
+  const members: Member[] = useMemo(() => [], []);
+
+  const [data, setData] = useState<any>([]);
 
   const fetchFactionDetail = async () => {
     let faction = await fetchFactionDetails({
@@ -25,24 +31,60 @@ export default function Home() {
     });
 
     setFaction(faction);
+    return faction;
   };
 
-  useEffect(() => {
-    let totalMembers = [];
+  const setMembersList = ({ faction }: { faction: any }) => {
     if (faction !== undefined) {
-      const members = faction.members;
-      for (const id in members) {
-        totalMembers.push({
+      const membersFromAPI = faction.members;
+      for (const id in membersFromAPI) {
+        members.push({
           id: id,
-          name: members[id].name,
-          status: members[id].status.description,
-          level: members[id].level,
+          name: membersFromAPI[id].name,
+          status: membersFromAPI[id].status.description,
+          level: membersFromAPI[id].level,
         });
       }
     }
+  };
 
-    setMembers(totalMembers);
-  }, [faction]);
+  const getPersonalStats = async () => {
+    let dataList = [];
+    for (let memberIndex in members) {
+      const member = members[memberIndex];
+      const data = await fetchPersonalStats({
+        id: member.id,
+        apiKey: apiKey,
+      });
+
+      const totalAttacks =
+        data.attackswon +
+        data.attackslost +
+        data.attacksdraw +
+        data.attacksassisted;
+
+      dataList.push({
+        name: member.name,
+        status: member.status,
+        level: member.level,
+        totalAttacks: totalAttacks,
+        networth: data.networth,
+        xanaxTaken: data.xantaken,
+        warHit: data.rankedwarhits,
+        revivesDone: data.revives,
+        cansUsed: data.energydrinkused,
+      });
+    }
+    setData(dataList);
+  };
+
+  const getEnemyStatsFromSpies = async ({ warID }: { warID: string }) => {
+    const data = await fetchEnemyStats({
+      apiKey: process.env.TORNSTATS_API_KEY,
+      warID: warID,
+    });
+    console.log(data, "war id");
+  };
 
   const handleFactionIDChange = (event: React.FormEvent<HTMLInputElement>) => {
     setFactionID(event.currentTarget.value);
@@ -77,18 +119,22 @@ export default function Home() {
           />
           <button
             className="bg-slate-950 text-white p-2 rounded-md"
-            onClick={fetchFactionDetail}
+            onClick={async () => {
+              fetchFactionDetail().then((faction) => {
+                setMembersList({ faction: faction });
+                getPersonalStats();
+                getEnemyStatsFromSpies({
+                  warID: Object.keys(faction.ranked_wars)[0],
+                });
+              });
+            }}
           >
             Search Faction
           </button>
         </div>
       </div>
       <div className="w-[calc(100%-288px)] ml-auto mr-0">
-        <CustomTable
-          factionName={faction && faction.name}
-          members={faction && members}
-          apiKey={apiKey}
-        />
+        <CustomTable factionName={faction && faction.name} data={data} />
       </div>
     </main>
   );

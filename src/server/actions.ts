@@ -35,3 +35,21 @@ export async function fetchPersonalStats({
   const data = await resp.json();
   return data.personalstats;
 }
+
+export async function fetchEnemyStats({
+  apiKey,
+  warID,
+}: {
+  apiKey: string | undefined;
+  warID: string;
+}) {
+  const url = `https://www.tornstats.com/api/v2/${apiKey}/wars/${warID}`;
+  const resp = await fetch(url);
+
+  if (!resp.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const data = await resp.json();
+  return data.faction_b.members;
+}
