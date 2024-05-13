@@ -17,6 +17,7 @@ const CustomTable = ({
   isLoading: boolean;
   data: any;
 }) => {
+  console.log(data);
   //should be memoized or stable
   const columns = useMemo<MRT_ColumnDef<any>[]>(
     () => [

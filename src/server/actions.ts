@@ -42,12 +42,12 @@ export async function fetchPersonalStats({
 
 export async function fetchEnemyStats({
   apiKey,
-  warID,
+  factionID,
 }: {
   apiKey: string | undefined;
-  warID: string;
+  factionID: string;
 }) {
-  const url = `https://www.tornstats.com/api/v2/${apiKey}/wars/${warID}`;
+  const url = `https://www.tornstats.com/api/v2/${apiKey}/spy/faction/${factionID}`;
   const resp = await fetch(url, {
     cache: "no-cache",
   });
@@ -57,5 +57,5 @@ export async function fetchEnemyStats({
   }
 
   const data = await resp.json();
-  return data.faction_b.members;
+  return data.faction.members;
 }
