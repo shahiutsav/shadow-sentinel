@@ -54,7 +54,14 @@ export default function Home() {
 
   const [tableData, setTableData] = useState<any>([]);
 
-  const [errors, setErrors] = useState<string[]>([]);
+  const [error, setError] = useState<string | undefined>(undefined);
+
+  const [tornApiInputError, setTornApiInputError] = useState<
+    string | undefined
+  >(undefined);
+  const [tornStatsApiInputError, setTornStatsApiInputError] = useState<
+    string | undefined
+  >(undefined);
 
   const fetchFactionDetail = async () => {
     let response = await fetchFactionDetails({
@@ -62,13 +69,14 @@ export default function Home() {
       factionID: factionID,
     });
 
+    setError(undefined);
     switch (response.status) {
       case 500:
         setIsLoading(false);
-        errors.push("The torn server cannot be reached.");
+        setError("The torn server cannot be reached.");
         return;
       case 404:
-        errors.push("The faction does not exist");
+        setError("The faction does not exist");
         setIsLoading(false);
         return;
       case 200:
@@ -176,79 +184,114 @@ export default function Home() {
     }, 60000); // 60000 milliseconds = 1 minute
   };
 
+  const handleTornAPIKeyInputChange = (
+    e: React.FormEvent<HTMLInputElement>
+  ) => {
+    if (e.currentTarget.value.length !== 16) {
+      setTornApiInputError("The api key should be 16 characters long");
+    } else {
+      setTornApiInputError(undefined);
+    }
+
+    setTornApiKey(e.currentTarget.value);
+  };
+
+  const handleTornStatsAPIKeyInputChange = (
+    e: React.FormEvent<HTMLInputElement>
+  ) => {
+    if (e.currentTarget.value.length !== 19) {
+      setTornStatsApiInputError("The api key should be 19 characters long");
+    } else {
+      setTornStatsApiInputError(undefined);
+    }
+
+    setTornstatsApiKey(e.currentTarget.value);
+  };
+
+  const handleFetchWarData = async () => {
+    setIsLoading(true);
+    fetchFactionDetail().then((faction) => {
+      // setMembersList({ faction: faction });
+      // getPersonalStats().then((originalData) => {
+      //   getEnemyStatsFromSpies({
+      //     factionID: factionID,
+      //     originalData: originalData,
+      //   }).then(() => {
+      //     setIsLoading(false);
+      //     disableForAMinute();
+      //   });
+      // });
+    });
+  };
+
   return (
     <main className="h-dvh">
-      <div className="max-w-72 h-full fixed shadow px-6 py-8 rounded-md flex flex-col gap-8">
-        <div className="flex flex-col gap-3">
-          <label htmlFor="torn_api_key">Torn API Key</label>
-          <input
-            name="torn_api_key"
-            type="text"
-            className="border p-2 rounded-md border-slate-400"
-            placeholder="API Key here"
-            value={tornApiKey}
-            onChange={(e: React.FormEvent<HTMLInputElement>) =>
-              setTornApiKey(e.currentTarget.value)
-            }
-          />
-        </div>
-        <div className="flex flex-col gap-3">
-          <label htmlFor="tornstats_api_key">Tornstats API Key</label>
-          <input
-            name="tornstats_api_key"
-            type="text"
-            className="border p-2 rounded-md border-slate-400"
-            placeholder="API Key here"
-            value={tornstatsApiKey}
-            onChange={(e: React.FormEvent<HTMLInputElement>) =>
-              setTornstatsApiKey(e.currentTarget.value)
-            }
-          />
-        </div>
-        <div className="flex flex-col gap-3">
-          <label htmlFor="faction_id">War Enemy Faction ID</label>
-          <input
-            type="text"
-            name="faction_id"
-            className="border p-2 rounded-md border-slate-400"
-            placeholder="8124"
-            value={factionID}
-            onChange={handleFactionIDChange}
-          />
-          {errors.map((error) => {
-            return (
+      <div className="max-w-72 h-full fixed shadow px-6 py-8 rounded-md">
+        <form action={handleFetchWarData} className="flex flex-col gap-8">
+          <div className="flex flex-col gap-3">
+            <label htmlFor="torn_api_key">Torn API Key</label>
+            <input
+              required
+              name="torn_api_key"
+              type="text"
+              className="border p-2 rounded-md border-slate-400"
+              placeholder="API Key here"
+              value={tornApiKey}
+              onChange={handleTornAPIKeyInputChange}
+            />
+            {tornApiInputError && (
+              <p className="text-xs text-red-400 font-medium">
+                {tornApiInputError}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col gap-3">
+            <label htmlFor="tornstats_api_key">Tornstats API Key</label>
+            <input
+              required
+              name="tornstats_api_key"
+              type="text"
+              className="border p-2 rounded-md border-slate-400"
+              placeholder="API Key here"
+              value={tornstatsApiKey}
+              onChange={handleTornStatsAPIKeyInputChange}
+            />
+            {tornStatsApiInputError && (
+              <p className="text-xs text-red-400 font-medium">
+                {tornStatsApiInputError}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col gap-3">
+            <label htmlFor="faction_id">War Enemy Faction ID</label>
+            <input
+              required
+              type="text"
+              name="faction_id"
+              className="border p-2 rounded-md border-slate-400"
+              placeholder="8124"
+              value={factionID}
+              onChange={handleFactionIDChange}
+            />
+            {error && (
               <ul key={error}>
                 <li className="text-red-500">{error}</li>
               </ul>
-            );
-          })}
-          <button
-            className="bg-slate-950 text-white p-2 rounded-md disabled:bg-slate-500 disabled:cursor-not-allowed flex items-center justify-center h-10"
-            disabled={disabled || isLoading}
-            onClick={async () => {
-              setIsLoading(true);
-              fetchFactionDetail().then((faction) => {
-                console.log(faction);
-                // setMembersList({ faction: faction });
-                // getPersonalStats().then((originalData) => {
-                //   getEnemyStatsFromSpies({
-                //     factionID: factionID,
-                //     originalData: originalData,
-                //   }).then(() => {
-                //     setIsLoading(false);
-                //     disableForAMinute();
-                //   });
-                // });
-              });
-            }}
-          >
-            {isLoading ? (
-              <span className="h-5 w-5 animate-spin rounded-full border-b-4 border-t-4 border-white"></span>
-            ) : (
-              `Search Faction ${disabled ? `(${secondsLeft})` : ""}`
             )}
-          </button>
-        </div>
+            <button
+              className="bg-slate-950 text-white p-2 rounded-md disabled:bg-slate-500 disabled:cursor-not-allowed flex items-center justify-center h-10"
+              disabled={disabled || isLoading}
+              type="submit"
+              value="submit"
+            >
+              {isLoading ? (
+                <span className="h-5 w-5 animate-spin rounded-full border-b-4 border-t-4 border-white"></span>
+              ) : (
+                `Search Faction ${disabled ? `(${secondsLeft})` : ""}`
+              )}
+            </button>
+          </div>
+        </form>
       </div>
       <div className="w-[calc(100%-288px)] ml-auto mr-0">
         <CustomTable
