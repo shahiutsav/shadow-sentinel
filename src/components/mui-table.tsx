@@ -17,8 +17,6 @@ const CustomTable = ({
   isLoading: boolean;
   data: any;
 }) => {
-  console.log(data);
-  //should be memoized or stable
   const columns = useMemo<MRT_ColumnDef<any>[]>(
     () => [
       {
@@ -34,40 +32,59 @@ const CustomTable = ({
       {
         accessorKey: "strength",
         header: "STR",
-        size: 20,
+        size: 150,
+        Cell: ({ cell }) => {
+          return (
+            <span>
+              {formatToThousandSeparator({ number: cell.getValue<number>() })}
+            </span>
+          );
+        },
       },
       {
         accessorKey: "speed",
         header: "SPD",
-        size: 20,
+        size: 150,
+        Cell: ({ cell }) => {
+          return (
+            <span>
+              {formatToThousandSeparator({ number: cell.getValue<number>() })}
+            </span>
+          );
+        },
       },
       {
         accessorKey: "defense",
-        header: "DF",
-        size: 20,
+        header: "DFS",
+        size: 150,
+        Cell: ({ cell }) => {
+          return (
+            <span>
+              {formatToThousandSeparator({ number: cell.getValue<number>() })}
+            </span>
+          );
+        },
       },
       {
         accessorKey: "dexterity",
         header: "DXT",
-        size: 20,
+        size: 150,
+        Cell: ({ cell }) => {
+          return (
+            <span>
+              {formatToThousandSeparator({ number: cell.getValue<number>() })}
+            </span>
+          );
+        },
       },
       {
         accessorKey: "total",
         header: "Total",
-        size: 20,
-      },
-      {
-        accessorKey: "timestamp",
-        header: "Time",
-        size: 20,
+        size: 150,
         Cell: ({ cell }) => {
           return (
             <span>
-              {cell.getValue<string>() === "NA"
-                ? "NA"
-                : timestampToHumanReadable(
-                    Number.parseInt(cell.getValue<string>())
-                  )}
+              {formatToThousandSeparator({ number: cell.getValue<number>() })}
             </span>
           );
         },
@@ -108,11 +125,6 @@ const CustomTable = ({
             </span>
           );
         },
-      },
-      {
-        accessorKey: "status", //normal accessorKey
-        header: "Status",
-        size: 260,
       },
     ],
     []

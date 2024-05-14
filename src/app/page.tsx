@@ -52,17 +52,28 @@ export default function Home() {
 
   const members: Member[] = useMemo(() => [], []);
 
-  const [data, setData] = useState<any>([]);
   const [tableData, setTableData] = useState<any>([]);
 
+  const [errors, setErrors] = useState<string[]>([]);
+
   const fetchFactionDetail = async () => {
-    let faction = await fetchFactionDetails({
+    let response = await fetchFactionDetails({
       apiKey: tornApiKey,
       factionID: factionID,
     });
 
-    setFaction(faction);
-    return faction;
+    switch (response.status) {
+      case 500:
+        setIsLoading(false);
+        errors.push("The torn server cannot be reached.");
+        return;
+      case 404:
+        errors.push("The faction does not exist");
+        setIsLoading(false);
+        return;
+      case 200:
+        return response.data;
+    }
   };
 
   const setMembersList = ({ faction }: { faction: any }) => {
@@ -82,11 +93,13 @@ export default function Home() {
   const getPersonalStats = async () => {
     let dataList: Member[] = [];
 
-    await axios.all(
+    await Promise.all(
       members.map((member) =>
         axios
           .get(
-            `https://api.torn.com/user/${member.id}?selections=personalstats&key=${tornApiKey}`
+            `https://api.torn.com/user/${
+              member.id
+            }?key=${tornApiKey}&timestamp=${1715641606}&stat=boostersused,xantaken,networth,rankedwarhits,revives,energydrinkused,attackswon,attackslost,attacksdraw,attacksassisted&comment=ShadowSentinel&selections=personalstats`
           )
           .then((data) => {
             const personalStats = data.data.personalstats;
@@ -112,7 +125,6 @@ export default function Home() {
       )
     );
 
-    setData(dataList);
     return dataList;
   };
 
@@ -203,22 +215,30 @@ export default function Home() {
             value={factionID}
             onChange={handleFactionIDChange}
           />
+          {errors.map((error) => {
+            return (
+              <ul key={error}>
+                <li className="text-red-500">{error}</li>
+              </ul>
+            );
+          })}
           <button
             className="bg-slate-950 text-white p-2 rounded-md disabled:bg-slate-500 disabled:cursor-not-allowed flex items-center justify-center h-10"
             disabled={disabled || isLoading}
             onClick={async () => {
               setIsLoading(true);
               fetchFactionDetail().then((faction) => {
-                setMembersList({ faction: faction });
-                getPersonalStats().then((originalData) => {
-                  getEnemyStatsFromSpies({
-                    factionID: factionID,
-                    originalData: originalData,
-                  }).then(() => {
-                    setIsLoading(false);
-                    disableForAMinute();
-                  });
-                });
+                console.log(faction);
+                // setMembersList({ faction: faction });
+                // getPersonalStats().then((originalData) => {
+                //   getEnemyStatsFromSpies({
+                //     factionID: factionID,
+                //     originalData: originalData,
+                //   }).then(() => {
+                //     setIsLoading(false);
+                //     disableForAMinute();
+                //   });
+                // });
               });
             }}
           >

@@ -13,21 +13,39 @@ export async function fetchFactionDetails({
   });
 
   if (!resp.ok) {
-    throw new Error("Failed to fetch data");
+    return {
+      message: "An error occurred while fetching the data from the api",
+      data: {},
+      status: 500,
+    };
   }
 
   const data = await resp.json();
-  return data;
+
+  if (data.error) {
+    return {
+      message: "The faction does not exist",
+      data: {},
+      status: 404,
+    };
+  }
+  return {
+    message: "Data fetch success",
+    data: data,
+    status: 200,
+  };
 }
 
 export async function fetchPersonalStats({
-  id,
+  userID,
   apiKey,
+  timeStamp,
 }: {
-  id: string;
+  userID: number;
   apiKey: string;
+  timeStamp: number;
 }) {
-  const url = `https://api.torn.com/user/${id}?selections=personalstats&key=${apiKey}`;
+  const url = `https://api.torn.com/user/${userID}?key=${apiKey}&timestamp=${timeStamp}&stat=boostersused,xantaken,networth,rankedwarhits,revives,energydrinkused&comment=ShadowSentinel&selections=personalstats`;
   const resp = await fetch(url, {
     cache: "no-cache",
   });
