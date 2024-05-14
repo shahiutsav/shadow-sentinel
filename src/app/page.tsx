@@ -14,12 +14,11 @@ interface Member {
   name: string;
   status: string;
   level: number;
-  strength?: string; // Add the new attributes here
-  speed?: string;
-  defense?: string;
-  dexterity?: string;
-  total?: string;
-  timestamp?: string;
+  strength?: number; // Add the new attributes here
+  speed?: number;
+  defense?: number;
+  dexterity?: number;
+  total?: number;
   totalAttacks?: number;
   networth?: number;
   xanaxTaken?: number;
@@ -62,6 +61,14 @@ export default function Home() {
   const [tornStatsApiInputError, setTornStatsApiInputError] = useState<
     string | undefined
   >(undefined);
+
+  const doesWarExist = ({ faction }: { faction: any }) => {
+    if (Object.keys(faction.ranked_wars).length === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   const fetchFactionDetail = async () => {
     let response = await fetchFactionDetails({
@@ -159,7 +166,12 @@ export default function Home() {
         originalData[matchingObjectIndex].defense = member.spy.defense;
         originalData[matchingObjectIndex].dexterity = member.spy.dexterity;
         originalData[matchingObjectIndex].total = member.spy.total;
-        originalData[matchingObjectIndex].timestamp = member.spy.timestamp;
+      } else {
+        originalData[matchingObjectIndex].strength = 0;
+        originalData[matchingObjectIndex].speed = 0;
+        originalData[matchingObjectIndex].defense = 0;
+        originalData[matchingObjectIndex].dexterity = 0;
+        originalData[matchingObjectIndex].total = 0;
       }
     });
 
@@ -211,16 +223,22 @@ export default function Home() {
   const handleFetchWarData = async () => {
     setIsLoading(true);
     fetchFactionDetail().then((faction) => {
-      // setMembersList({ faction: faction });
-      // getPersonalStats().then((originalData) => {
-      //   getEnemyStatsFromSpies({
-      //     factionID: factionID,
-      //     originalData: originalData,
-      //   }).then(() => {
-      //     setIsLoading(false);
-      //     disableForAMinute();
-      //   });
-      // });
+      setMembersList({ faction: faction });
+      const warExists = doesWarExist({ faction: faction });
+      if (warExists) {
+        getPersonalStats().then((originalData) => {
+          getEnemyStatsFromSpies({
+            factionID: factionID,
+            originalData: originalData,
+          }).then(() => {
+            setIsLoading(false);
+            disableForAMinute();
+          });
+        });
+      } else {
+        setIsLoading(false);
+        setError("The faction is not at war");
+      }
     });
   };
 
