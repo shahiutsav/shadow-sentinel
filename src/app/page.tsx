@@ -8,6 +8,7 @@ import {
 import CustomTable from "@/components/mui-table";
 import React, { useMemo, useState } from "react";
 import axios from "axios";
+import { Box, Button, TextField } from "@mui/material";
 
 interface Member {
   id: string;
@@ -87,6 +88,7 @@ export default function Home() {
         setIsLoading(false);
         return;
       case 200:
+        console.log(response.data);
         return response.data;
     }
   };
@@ -178,10 +180,6 @@ export default function Home() {
     setTableData(originalData);
   };
 
-  const handleFactionIDChange = (event: React.FormEvent<HTMLInputElement>) => {
-    setFactionID(event.currentTarget.value);
-  };
-
   const disableForAMinute = () => {
     setDisabled(true);
 
@@ -197,32 +195,42 @@ export default function Home() {
   };
 
   const handleTornAPIKeyInputChange = (
-    e: React.FormEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    if (e.currentTarget.value.length !== 16) {
+    const apiKey = e.target.value;
+
+    if (apiKey.length !== 16) {
       setTornApiInputError("The api key should be 16 characters long");
     } else {
       setTornApiInputError(undefined);
     }
 
-    setTornApiKey(e.currentTarget.value);
+    setTornApiKey(apiKey);
   };
 
   const handleTornStatsAPIKeyInputChange = (
-    e: React.FormEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    if (e.currentTarget.value.length !== 19) {
+    const apiKey = e.target.value;
+    if (apiKey.length !== 19) {
       setTornStatsApiInputError("The api key should be 19 characters long");
     } else {
       setTornStatsApiInputError(undefined);
     }
 
-    setTornstatsApiKey(e.currentTarget.value);
+    setTornstatsApiKey(apiKey);
+  };
+
+  const handleFactionIDChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setFactionID(event.currentTarget.value);
   };
 
   const handleFetchWarData = async () => {
     setIsLoading(true);
     fetchFactionDetail().then((faction) => {
+      setFaction(faction);
       setMembersList({ faction: faction });
       const warExists = doesWarExist({ faction: faction });
       if (warExists) {
@@ -243,18 +251,16 @@ export default function Home() {
   };
 
   return (
-    <main className="h-dvh">
-      <div className="max-w-72 h-full fixed shadow px-6 py-8 rounded-md">
-        <form action={handleFetchWarData} className="flex flex-col gap-8">
+    <Box component={"main"} className="h-dvh">
+      <Box className="max-w-60 h-full fixed px-4 py-8 rounded-md">
+        <form action={handleFetchWarData} className="flex flex-col gap-4">
           <div className="flex flex-col gap-3">
-            <label htmlFor="torn_api_key">Torn API Key</label>
-            <input
+            <TextField
               required
               name="torn_api_key"
               type="text"
-              className="border p-2 rounded-md border-slate-400"
-              placeholder="API Key here"
               value={tornApiKey}
+              label="Torn API Key"
               onChange={handleTornAPIKeyInputChange}
             />
             {tornApiInputError && (
@@ -264,14 +270,12 @@ export default function Home() {
             )}
           </div>
           <div className="flex flex-col gap-3">
-            <label htmlFor="tornstats_api_key">Tornstats API Key</label>
-            <input
+            <TextField
               required
               name="tornstats_api_key"
               type="text"
-              className="border p-2 rounded-md border-slate-400"
-              placeholder="API Key here"
               value={tornstatsApiKey}
+              label="Tornstats API Key"
               onChange={handleTornStatsAPIKeyInputChange}
             />
             {tornStatsApiInputError && (
@@ -281,13 +285,11 @@ export default function Home() {
             )}
           </div>
           <div className="flex flex-col gap-3">
-            <label htmlFor="faction_id">War Enemy Faction ID</label>
-            <input
+            <TextField
               required
               type="text"
               name="faction_id"
-              className="border p-2 rounded-md border-slate-400"
-              placeholder="8124"
+              label="War-Enemy Faction ID"
               value={factionID}
               onChange={handleFactionIDChange}
             />
@@ -296,8 +298,9 @@ export default function Home() {
                 <li className="text-red-500">{error}</li>
               </ul>
             )}
-            <button
-              className="bg-slate-950 text-white p-2 rounded-md disabled:bg-slate-500 disabled:cursor-not-allowed flex items-center justify-center h-10"
+            <Button
+              variant="outlined"
+              className="rounded-md disabled:bg-slate-500 disabled:cursor-not-allowed h-12"
               disabled={disabled || isLoading}
               type="submit"
               value="submit"
@@ -307,17 +310,17 @@ export default function Home() {
               ) : (
                 `Search Faction ${disabled ? `(${secondsLeft})` : ""}`
               )}
-            </button>
+            </Button>
           </div>
         </form>
-      </div>
-      <div className="w-[calc(100%-288px)] ml-auto mr-0">
+      </Box>
+      <div className="w-[calc(100%-240px)] ml-auto mr-0">
         <CustomTable
           factionName={faction && faction.name}
           data={tableData}
           isLoading={isLoading}
         />
       </div>
-    </main>
+    </Box>
   );
 }
